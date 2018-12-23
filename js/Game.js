@@ -43,14 +43,17 @@ removeLife()
 {
   this.missed++;
   let hearts = document.querySelectorAll('.tries');
-  console.log(this.missed)
   for(let i = 0; i < this.missed; i++ )
   {
-    hearts[i].innerHTML = '<img src="images/lostHeart.png">';
+    hearts[i].innerHTML = '<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">';
 
   }
   if(this.missed === 5)
+  {
   this.gameOver(false);
+  this.missed = 0;
+  }
+
 }
 
 gameOver(gameWon)
@@ -59,10 +62,16 @@ gameOver(gameWon)
   overlay.style.display = 'flex';
   const mess = document.createElement('h2')
 
-  if(false)
-  mess.textContent = 'GameOver';
+  if(gameWon)
+  {
+    mess.textContent = 'You Win!'
+    overlay.className ='win'
+  }
   else
-  mess.textContent = 'You Win!'
+  {
+    mess.textContent = 'GameOver';
+    overlay.className ='lose'
+  }
 
   overlay.append(mess);
 }
@@ -87,7 +96,7 @@ gameOver(gameWon)
 handleInteraction(button)
 {
   const phrase = new Phrase(this.activePhrase);
-  console.log(phrase)
+
   if(phrase.checkLetter(button.textContent))
   {
     phrase.showMatchedLetters(button.textContent);
