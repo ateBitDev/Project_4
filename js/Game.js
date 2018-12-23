@@ -4,6 +4,7 @@ class Game
   {
     this.missed = 0;
     this.activePhrase = null;
+    const phrase = new Phrase(this.activePhrase);
     this.phrases = [
       {
         phrase: 'life is like a box of chocolates'
@@ -25,20 +26,17 @@ class Game
 
   checkForWin()
   {
-  let notOver = false
+  let over = true
   let charList = document.querySelectorAll('li')
 
   charList.forEach(char =>
     {
-      if (li.className !== 'tries')
+      if(char.className.includes('hide letter'))
       {
-        if(li.className === 'show letter')
-        notOver = true
-        else
-        console.log('over');
+        over = false
       }
     })
-    return notOver;
+    return over;
   }
 
 removeLife()
@@ -57,7 +55,16 @@ removeLife()
 
 gameOver(gameWon)
 {
-  const game = new game();
+  const overlay = document.getElementById('overlay');
+  overlay.style.display = 'flex';
+  const mess = document.createElement('h2')
+
+  if(false)
+  mess.textContent = 'GameOver';
+  else
+  mess.textContent = 'You Win!'
+
+  overlay.append(mess);
 }
 
   getRandomPhrase()
@@ -75,8 +82,30 @@ gameOver(gameWon)
     this.activePhrase = this.getRandomPhrase();
     const phrase = new Phrase(this.activePhrase);
     phrase.addPhraseToDisplay();
-  // handleInteraction()
-  // {
-  //
-  // }
-}}
+}
+
+handleInteraction(button)
+{
+  const phrase = new Phrase(this.activePhrase);
+  console.log(phrase)
+  if(phrase.checkLetter(button.textContent))
+  {
+    phrase.showMatchedLetters(button.textContent);
+    button.className = 'chosen';
+    if(this.checkForWin())
+    {
+      this.gameOver(true);
+    }
+  }
+  else
+  {
+    if(button.textContent !== "Start Game")
+    {
+    button.className = 'wrong';
+    button.disabled = true;
+    this.removeLife();
+    }
+
+  }
+}
+}

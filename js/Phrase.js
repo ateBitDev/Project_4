@@ -21,13 +21,11 @@ class Phrase
 
     if(split.includes(letter))
     {
-      this.showMatchedLetters(letter);
-        console.log('true')
+      return true
     }
     else
     {
-      console.log('false')
-      const game = new Game();
+      return false
     }
   }
 
@@ -50,14 +48,7 @@ class Phrase
       li.textContent = letter
       ul.append(li);
 
-      const buttons = document.querySelectorAll('BUTTON');
-      buttons.forEach(button => button.addEventListener('click', (e) =>
-      {
-        this.checkLetter(e.target.textContent);
 
-
-
-      }))
     }
   }
 }
