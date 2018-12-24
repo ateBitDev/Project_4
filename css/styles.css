@@ -4,11 +4,11 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: forestgreen;
+  --color-lose: #red;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
+  --color-neutral-light: #DC143C;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Comic Sans MS', sans-serif;
 }
 
 body {
@@ -28,10 +28,11 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-color: lightgreen;
 }
 
 li, ol, ul {
-  padding: 0;
+  padding: .8;
   display: inline-block;
 }
 
@@ -81,6 +82,7 @@ button {
 
 #phrase ul li{
   margin-top: 15px;
+  border: solid 2px
 }
 
 /* Title */
@@ -138,7 +140,7 @@ button {
 }
 
 .wrong {
-  background: #f7a964;
+  background: #DC143C;
   color: #FFFFFF;
 }
 
@@ -196,7 +198,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #8B0000;
 }
 
 .lose a {

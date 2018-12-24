@@ -26,7 +26,3 @@ let keyListener = (e) =>  {
   game.handleInteraction(key);
 }
 document.addEventListener('keydown', keyListener);
-
-
-
-//ocument.removeEventListener('keydown', keyListener);

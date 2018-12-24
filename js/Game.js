@@ -46,7 +46,7 @@ removeLife()
   let hearts = document.querySelectorAll('.tries');
   for(let i = 0; i < this.missed; i++ )
   {
-    hearts[i].innerHTML = '<img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30">';
+    hearts[i].innerHTML = '<img src="images/download.png" alt="Heart Icon" height="35" width="30">';
 
   }
   if(this.missed === 5)
