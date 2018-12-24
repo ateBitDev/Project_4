@@ -67,15 +67,15 @@ gameOver(gameWon)
   {
     mess.textContent = 'You Win!'
     overlay.className ='win'
-      this.resetGame();
+
   }
   else
   {
     mess.textContent = 'GameOver';
     overlay.className ='lose'
-      this.resetGame();
-  }
 
+  }
+this.resetGame();
 
 }
 //gets random phrase and checks if it was used already
@@ -105,6 +105,7 @@ this.used.push(randomPhrase)
     this.activePhrase = new Phrase(string);
 
     this.activePhrase.addPhraseToDisplay();
+    document.addEventListener('keydown', keyListener);
 }
 //calls check letter and skeeps track of if the games over
 handleInteraction(button)
@@ -146,6 +147,8 @@ resetGame()
   this.missed = 0;
 
   ul.innerHTML = '';
+  document.removeEventListener('keydown', keyListener);
+
   }
 
 }
