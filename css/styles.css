@@ -161,8 +161,34 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
-
 /* Overlay */
+
+/* Make the image responsive */
+/* .main-container img {
+  width: 100%;
+  height: auto;
+} */
+
+/* Style the button and place it in the middle of the container/image */
+ /* .main-container #btn__reset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+
+/* .main-container #btn__reset:hover {
+  background-color: black;
+
+} */
 
 #overlay {
   display: flex;
@@ -175,14 +201,19 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+
 }
 
+
+
+
+
 .title {
-  color: #FFF;
+  color: black;
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: lightblue;;
 }
 
 .start a {
